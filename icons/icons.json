@@ -1384,13 +1384,9 @@
   },
   "file_type_registry": {
     "color": "sky",
-    "aliases": [
+    "syntaxes": [
       {
         "name": "Registry (REG)",
-        "extensions": [
-          "reg"
-        ],
-        "base": "source.ini",
         "scope": "source.reg"
       }
     ]
