@@ -4,6 +4,23 @@ The icons for packages provided by the community must be installed, i.e., if you
 
 This file contains a list of possible packages you may need to install to see their respective icons.
 
+## Ada
+
+- [Ada](https://packagecontrol.io/packages/Ada)
+
+## Arduino
+
+- [Arduino](https://packagecontrol.io/packages/Arduino)
+- [Arduino-like IDE](https://packagecontrol.io/packages/Arduino-like%20IDE)
+
+## Bazel
+
+- [BazelSyntax](https://packagecontrol.io/packages/BazelSyntax)
+
+## COBOL
+
+- [COBOL](https://packagecontrol.io/packages/COBOL%20Syntax)
+
 ## CMake
 
 - [CMake](https://packagecontrol.io/packages/CMake)
@@ -39,6 +56,11 @@ This file contains a list of possible packages you may need to install to see th
 
 - [EditorConfig](https://packagecontrol.io/packages/EditorConfig)
 
+## EJS
+
+- [EJS](https://packagecontrol.io/packages/EJS)
+- [EJS 2](https://packagecontrol.io/packages/EJS%202)
+
 ## Elixir
 
 - [Elixir](https://packagecontrol.io/packages/Elixir)
@@ -47,9 +69,23 @@ This file contains a list of possible packages you may need to install to see th
 
 - [Elm Language Support](https://packagecontrol.io/packages/Elm%20Language%20Support)
 
+## EmberScript
+
+- [EmberScript](https://packagecontrol.io/packages/EmberScript)
+- [Ember Single-File Component Syntax](https://packagecontrol.io/packages/Ember%20Single-File%20Component%20Syntax)
+
 ## Env
 
 - [DotENV](https://packagecontrol.io/packages/DotENV)
+
+## Fortran
+
+- [Fortran](https://packagecontrol.io/packages/Fortran)
+- [MinimalFortran](https://packagecontrol.io/packages/MinimalFortran)
+
+## FSharp
+
+- [FSharp](https://github.com/hoest/sublimetext-fsharp)
 
 ## Git
 
@@ -72,6 +108,7 @@ This file contains a list of possible packages you may need to install to see th
 - [AngularJS](https://packagecontrol.io/packages/AngularJS)
 - [JS Custom](https://packagecontrol.io/packages/JSCustom)
 - [JSX](https://packagecontrol.io/packages/JSX)
+- [NGX](https://packagecontrol.io/packages/Ngx%20HTML)
 
 ## Julia
 
@@ -96,6 +133,10 @@ This file contains a list of possible packages you may need to install to see th
 ## Maya
 
 - [MayaSublime](https://packagecontrol.io/packages/MayaSublime)
+
+## MDX
+
+- [MDX Syntax Highlighting](https://packagecontrol.io/packages/MDX%20Syntax%20Highlighting)
 
 ## Mustache & Handlebars
 

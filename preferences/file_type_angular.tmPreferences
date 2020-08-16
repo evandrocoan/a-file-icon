@@ -2,7 +2,7 @@
 <plist version="1.0">
   <dict>
     <key>scope</key>
-    <string>text.html.basic.angularjs</string>
+    <string>text.html.angularjs, text.html.basic.angularjs, text.html.ngx</string>
     <key>settings</key>
     <dict>
       <key>icon</key>

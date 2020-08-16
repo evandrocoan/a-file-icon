@@ -1,5 +1,6 @@
 import os
 import shutil
+import sublime
 
 from textwrap import dedent
 
@@ -26,21 +27,37 @@ def enable():
     log("Enabling aliases")
 
     # template to create alias syntax without pyyaml dependency
-    template = dedent(
-        """
-        %YAML 1.2
-        ---
-        # http://www.sublimetext.com/docs/3/syntax.html
-        name: {name}
-        hidden: true
-        file_extensions: {extensions}
-        scope: {scope}
-        contexts:
-          main:
-            - include: scope:{base}#prototype
-            - include: scope:{base}
-        """
-    ).strip()
+    if int(sublime.version()) > 4075:
+        template = dedent(
+            """
+            %YAML 1.2
+            ---
+            name: {name}
+            hidden: true
+            file_extensions: {extensions}
+            scope: {scope}
+            contexts:
+              main:
+                - include: scope:{base}
+                  apply_prototype: true
+            """
+        ).strip()
+
+    else:
+        template = dedent(
+            """
+            %YAML 1.2
+            ---
+            name: {name}
+            hidden: true
+            file_extensions: {extensions}
+            scope: {scope}
+            contexts:
+              main:
+                - include: scope:{base}#prototype
+                - include: scope:{base}
+            """
+        ).strip()
 
     for file_type in icons_json_content().values():
         for alias in file_type.get("aliases", []):

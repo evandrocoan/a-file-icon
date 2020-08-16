@@ -53,25 +53,40 @@ def _init_overlay(dest):
     _copy_general(src, dest, "single")
 
     # extract remaining icons from the package archive
+    package = path.installed_package_path()
     try:
-        with zipfile.ZipFile(path.installed_package_path()) as z:
+        source_paths = ("icons/multi/", "icons/single/")
+
+        with zipfile.ZipFile(package) as z:
             for m in z.namelist():
-                if m.startswith("icons/multi") or m.startswith("icons/single"):
-                    _, color, name = m.split("/")
-                    try:
-                        with open(os.path.join(dest, color, name), "xb") as f:
-                            f.write(z.read(m))
-                    except FileExistsError:
-                        pass
+                if not any(m.startswith(p) for p in source_paths):
+                    continue
+
+                _, name = m.split("/", 1)
+                if not name.endswith(".png"):
+                    continue
+
+                try:
+                    with open(os.path.join(dest, name), "xb") as f:
+                        f.write(z.read(m))
+                except FileExistsError:
+                    pass
+                except FileNotFoundError as error:
+                    dump(error)
+
+        dump("Icons extracted from ", package)
     except FileNotFoundError:
-        pass
+        dump("No icons found in ", package)
 
 
 def _copy_general(source, overlay, color):
+    src = os.path.join(source, color)
     dest = os.path.join(overlay, color)
     try:
-        shutil.copytree(os.path.join(source, color), dest)
+        shutil.copytree(src, dest)
+        dump("Icons copied from ", src)
     except FileNotFoundError:
+        dump("No icons found in ", src)
         os.makedirs(dest, exist_ok=True)
     except OSError as error:
         log("Error during copy")

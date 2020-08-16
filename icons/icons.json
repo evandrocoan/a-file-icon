@@ -33,6 +33,15 @@
       }
     ]
   },
+  "file_type_ada": {
+    "color": "red",
+    "syntaxes": [
+      {
+        "name": "Ada",
+        "scope": "source.ada"
+      }
+    ]
+  },
   "file_type_ae": {
     "color": "purple",
     "aliases": [
@@ -61,11 +70,19 @@
     ]
   },
   "file_type_angular": {
-    "color": "pink",
+    "color": "red",
     "syntaxes": [
       {
         "name": "Angular​JS",
         "scope": "text.html.basic.angularjs"
+      },
+      {
+        "name": "Angular​JS",
+        "scope": "text.html.angularjs"
+      },
+      {
+        "name": "Ngx HTML",
+        "scope": "text.html.ngx"
       }
     ]
   },
@@ -109,6 +126,19 @@
       }
     ]
   },
+  "file_type_arduino": {
+    "color": "cyan",
+    "syntaxes": [
+      {
+        "name": "Arduino",
+        "scope": "source.c++.arduino"
+      },
+      {
+        "name": "Arduino-like IDE",
+        "scope": "source.arduino"
+      }
+    ]
+  },
   "file_type_audio": {
     "color": "red",
     "aliases":[
@@ -148,6 +178,15 @@
         ],
         "base": "source.json",
         "scope": "source.json.babel"
+      }
+    ]
+  },
+  "file_type_bazel": {
+    "color": "green",
+    "syntaxes": [
+      {
+        "name": "Bazel",
+        "scope": "source.bazel"
       }
     ]
   },
@@ -239,6 +278,15 @@
         "scope": "source.cmakeeditor"
       }
 
+    ]
+  },
+  "file_type_cobol": {
+    "color": "cyan",
+    "syntaxes": [
+      {
+        "name": "Cobol",
+        "scope": "source.cobol"
+      }
     ]
   },
   "file_type_coffeescript": {
@@ -435,6 +483,28 @@
       }
     ]
   },
+  "file_type_ember": {
+    "color": "green",
+    "syntaxes": [
+      {
+        "name": "EmberScript",
+        "scope": "source.ember"
+      },
+      {
+        "name": "HTML (EmberScript)",
+        "scope": "text.html.ember"
+      }
+    ]
+  },
+  "file_type_ejs": {
+    "color": "green",
+    "syntaxes": [
+      {
+        "name": "EJS",
+        "scope": "text.ejs"
+      }
+    ]
+  },
   "file_type_elm": {
     "color": "cyan",
     "syntaxes": [
@@ -543,6 +613,36 @@
         ],
         "base": "text.plain",
         "scope": "text.plain.font"
+      }
+    ]
+  },
+  "file_type_fortran": {
+    "color": "red",
+    "syntaxes": [
+      {
+        "name": "Fortran",
+        "scope": "source.fortran"
+      },
+      {
+        "name": "Fortran Namelist",
+        "scope": "source.fortran-namelist"
+      },
+      {
+        "name": "Fixed Form Fortran",
+        "scope": "source.fixedform-fortran"
+      },
+      {
+        "name": "Modern Fortran",
+        "scope": "source.modern-fortran"
+      }
+    ]
+  },
+  "file_type_fsharp": {
+    "color": "sky",
+    "syntaxes": [
+      {
+        "name": "F#",
+        "scope": "source.fsharp"
       }
     ]
   },
@@ -694,7 +794,26 @@
     ]
   },
   "file_type_image": {
-    "color": "green"
+    "color": "green",
+    "aliases": [
+      {
+        "name": "Plain Text (Image)",
+        "extensions": [
+          "emf",
+          "jp2",
+          "pnm",
+          "ppm",
+          "tga",
+          "tif",
+          "tiff",
+          "webp",
+          "xbm",
+          "xpm"
+        ],
+        "base": "text.plain",
+        "scope": "text.plain.image"
+      }
+    ]
   },
   "file_type_indesign": {
     "color": "pink",
@@ -753,6 +872,10 @@
   "file_type_jsx": {
     "color": "blue",
     "syntaxes": [
+      {
+        "name": "JSX",
+        "scope": "source.jsx"
+      },
       {
         "name": "JSX",
         "scope": "source.js.jsx"
@@ -888,6 +1011,15 @@
       }
     ]
   },
+  "file_type_markdownx": {
+    "color": "cyan",
+    "syntaxes": [
+      {
+        "name": "MDX (Markdown JSX)",
+        "scope": "text.html.markdown.jsx"
+      }
+    ]
+  },
   "file_type_markup": {
     "color": "purple"
   },
@@ -1010,6 +1142,19 @@
         ],
         "base": "text.plain",
         "scope": "text.plain.onenote"
+      }
+    ]
+  },
+  "file_type_pcb": {
+    "color": "cyan",
+    "aliases": [
+      {
+        "name": "Gerber fabrication files",
+        "extensions": [
+          "pcb"
+        ],
+        "base": "text.plain",
+        "scope": "text.plain.pcb"
       }
     ]
   },
@@ -1359,15 +1504,6 @@
         ],
         "base": "source.json",
         "scope": "source.json.settings"
-      },
-      {
-        "name": "XML (Config)",
-        "linter": "xml",
-        "extensions": [
-          "config"
-        ],
-        "base": "text.xml",
-        "scope": "text.xml.config"
       }
     ]
   },
@@ -1621,8 +1757,8 @@
           "spec.jsx",
           "test.jsx"
         ],
-        "base": "source.js.react",
-        "scope": "source.js.react.unittest"
+        "base": "source.jsx",
+        "scope": "source.jsx.unittest"
       }
     ]
   },
@@ -1685,7 +1821,7 @@
     ]
   },
   "file_type_toml": {
-    "color": "graphite",
+    "color": "cyan",
     "syntaxes": [
       {
         "name": "TOML",
@@ -1699,6 +1835,10 @@
       {
         "name": "TypeScript React",
         "scope": "source.tsx"
+      },
+      {
+        "name": "TypeScript React",
+        "scope": "source.ts.react"
       }
     ]
   },
@@ -1717,7 +1857,12 @@
       {
         "name": "TypeScript",
         "scope": "source.ts"
+      },
+      {
+        "name": "TypeScript",
+        "scope": "source.js.typescript"
       }
+
     ]
   },
   "file_type_unity3d": {
@@ -1857,6 +2002,7 @@
         "extensions": [
           "webpack.config.js",
           "webpack.config.babel.js",
+          "webpack.dev.js",
           "webpack.mix.js"
         ],
         "base": "source.js",

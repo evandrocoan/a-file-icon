@@ -2,7 +2,7 @@
 <plist version="1.0">
   <dict>
     <key>scope</key>
-    <string>source.env, source.ini, source.json.settings, text.xml.config</string>
+    <string>source.env, source.ini, source.json.settings</string>
     <key>settings</key>
     <dict>
       <key>icon</key>

@@ -2,7 +2,7 @@
 <plist version="1.0">
   <dict>
     <key>scope</key>
-    <string>source.js.react.unittest</string>
+    <string>source.jsx.unittest</string>
     <key>settings</key>
     <dict>
       <key>icon</key>

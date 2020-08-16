@@ -128,15 +128,17 @@ def _create_general_patch(settings):
 
     color = convert_color_value(settings.get("color"))
     opacity = settings.get("opacity")
+    icon = _patch_icon(None, color, opacity)
+
     size = settings.get("size")
+    if size:
+        icon["content_margin"] = [size, size]
+
     row_padding = settings.get("row_padding")
-    if color or opacity or size or row_padding:
-        icon = _patch_icon(None, color, opacity)
-        if size:
-            icon["content_margin"] = [size, size]
-        if row_padding:
-            icon["row_padding"] = row_padding
-        theme_content.append(icon)
+    if row_padding:
+        icon["row_padding"] = row_padding
+
+    theme_content.append(icon)
 
     color = convert_color_value(settings.get("color_on_hover"))
     opacity = settings.get("opacity_on_hover")
@@ -157,9 +159,9 @@ def _create_specific_patch(settings):
     theme_content = []
 
     color = convert_color_value(settings.get("color"))
-    if color:
-        theme_content.append(_patch_icon(None, color))
+    theme_content.append(_patch_icon(None, color))
 
+    if color:
         color_on_hover = convert_color_value(settings.get("color_on_hover"))
         if color_on_hover:
             theme_content.append(_patch_icon("hover", color_on_hover))
@@ -173,11 +175,9 @@ def _create_specific_patch(settings):
 
 
 def _patch_icon(attrib, color=None, opacity=None):
-    icon = {"class": "icon_file_type"}
+    icon = {"class": "icon_file_type", "layer0.tint": color}
     if attrib:
         icon["parents"] = [{"class": "tree_row", "attributes": [attrib]}]
-    if color:
-        icon["layer0.tint"] = color
     if opacity:
         icon["layer0.opacity"] = opacity
     return icon

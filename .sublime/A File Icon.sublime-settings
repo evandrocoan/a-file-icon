@@ -12,6 +12,7 @@
   // - HEX: "#fff", "#ABABAB"
   // - HSL: "hsl(360, 100%, 100%)"
   // - RGB: [255, 255, 255]
+  // - VAR: "var(--accent)"
   "color": "",
 
   // Provide your color in #RGB or #RRGGBB format if you want to use
