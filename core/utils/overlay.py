@@ -5,11 +5,14 @@ from .path import OVERLAY_ROOT
 
 def with_ignored_overlay(fun):
     def decorator(*args, **kwargs):
+        def delayed():
+            try:
+                fun(*args, **kwargs)
+            finally:
+                enable_overlay()
+
         disable_overlay()
-        try:
-            fun(*args, **kwargs)
-        finally:
-            enable_overlay()
+        sublime.set_timeout_async(delayed, 200)
 
     return decorator
 
